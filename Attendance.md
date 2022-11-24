@@ -6,3 +6,5 @@
 |   2022-11-10 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   X	|   X	|
 |   2022-11-15 | Stand up	|   X	|   X	|   X	|   X	|   X	|   X	|
 |   2022-11-17 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   X	|   X	|
+|   2022-11-22 | Stand up	|   X	|   Sick	|   X	|   X	|   X	|   X	|
+|   2022-11-24 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   Sick   |   X	|
