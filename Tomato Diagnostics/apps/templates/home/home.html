@@ -1,0 +1,80 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+
+        {% include "includes/navigation-fullscreen.html" %}
+
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+              <div class="card card-plain mt-8">
+                <div class="card-header pb-0 text-left bg-transparent">
+                    <h3 class="font-weight-bolder text-info text-gradient">
+                    Tomato Diagnostics
+                    </h3>
+
+                    <h5 class="mb-5"> 
+                    By uploading a picture of a tomatoplants leaf Tomato Diagnostics can determain whether it is healthy or if it is not.
+                    </h5>
+                </div>
+                <div class="card-body">
+
+                  <form role="form text-left" method="post" action="">
+                    
+                    <label class="form-label" for="customFile">Upload a picture on the plants leaf</label>
+                    <input class="form-control" type="file" id="formFile" onchange="preview()">
+                    <button type="submit" onclick="clearImage()" class="btn bg-gradient-info w-100 mt-4 mb-0">Upload</button>
+
+                  </form>
+
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                <img id="frame" src="{{ ASSETS_ROOT }}/img/tomato.png" class="img-fluid oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% include "includes/footer-fullscreen.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+
+{% block javascripts %}
+<script>
+    function preview() {
+        frame.src = URL.createObjectURL(event.target.files[0]);
+    }
+    function clearImage() {
+        document.getElementById('formFile').value = null;
+        frame.src = "";
+    }
+
+    
+</script>
+{% endblock javascripts %}
