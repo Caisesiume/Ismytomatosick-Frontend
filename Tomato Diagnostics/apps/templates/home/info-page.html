@@ -1,0 +1,71 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+
+        {% include "includes/navigation-fullscreen.html" %}
+
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8 col-md-9 d-flex flex-column mx-auto">
+              <div class="card card-plain mt-8">
+                <div class="card-header pb-0 text-center bg-transparent">
+                  <i class="fa fa-cogs fa-7x mb-5" aria-hidden="true"></i>
+                  <h1 class="font-weight-bolder text-info text-gradient mb-5">
+                    Tomato Diagnostics
+                  </h1>
+                  <h4 class="mb-5">
+                    How do we determine the disease?
+                  </h4>
+                  <h5 class="mb-5"> 
+                    By having tens of thousands of leaf samples analyzed in the pased, we are using our artifcial interlligence algorithm to detrimine the result when using our service. 
+                    Our model is trained to identify 10 different diseases besides being able to tell if the plant is healthy. You can find more about the different diseases 
+                    <a href="/"> here >></a>
+                  </h5> 
+
+                  <h4 class="mb-5">
+                    How will my data handled?
+                  </h4>
+                  <h5 class="mb-5"> 
+                    All the data you provide to our service, uploaded media included, will be handled in accordance with our Privacy Policy. 
+                    A quick summary of the <a href="/"> Privacy Policy. </a>  The pictures uploaded to our service will be saved and used for eventual retraining of our models, 
+                    further the system will save limited data logs of your connection to our system to prevent malicious activity.
+                  </h5> 
+                  
+                  <h5 class="mb-5"> 
+                    Additional
+                  </h5>
+
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% include "includes/footer-info.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

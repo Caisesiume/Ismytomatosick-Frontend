@@ -1,0 +1,66 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+
+        {% include "includes/navigation-fullscreen.html" %}
+
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+              <div class="card card-plain mt-8">
+                <div class="card-header pb-0 text-center bg-transparent">
+                  <h1 class="font-weight-bolder text-info text-gradient mb-5">
+                    Tomato Diagnostics
+                  </h1>
+
+
+                  <div class="row">
+                    <div class ="col-sm-6">
+
+                      <a href = "/info-page">
+                        <i class="fa fa-cogs fa-10x mb-5" aria-hidden="true"></i>
+                        <!--img src="{{ ASSETS_ROOT }}/img/infocog.png" class="img-fluid max-height-vh-40 mb-5"-->
+                        <h3 class="font-weight-bolder text-info text-gradient mb-5"> About Tomato Diagnostics </h3>
+                      </a>
+          
+
+                    </div>
+                    <div class="col-sm-6">
+                      <a href = "/info-plant">
+                      <i class="fa fa-envira fa-10x mb-5" aria-hidden="true"></i>
+                      <!--img src="{{ ASSETS_ROOT }}/img/infoleaf.png" class="img-fluid max-height-vh-40 mb-5"-->
+                      <h3 class="font-weight-bolder text-info text-gradient mb-5"> About plant diseases </h3>
+                      </a>
+                    </div>
+
+
+                  </div>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% include "includes/footer-fullscreen.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

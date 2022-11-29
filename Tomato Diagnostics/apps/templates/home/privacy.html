@@ -1,0 +1,140 @@
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+
+
+{% block stylesheets %}
+    
+{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+
+        {% include "includes/navigation-fullscreen.html" %}
+
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header min-vh-75">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-7 col-lg-8 col-md-9 d-flex flex-column mx-auto">
+              <div class="card card-plain mt-8">
+                <div class="card-header pb-0 text-center bg-transparent">
+                  <i class="fa fa-cogs fa-7x mb-5" aria-hidden="true"></i>
+                  <h1 class="font-weight-bolder text-info text-gradient">
+                    Tomato Diagnostics
+                  </h1>
+                  <h1 class="font-weight-bolder text-info text-gradient mb-5">
+                    Privace Policy
+                  </h1>
+                  <h5 class="mb-5"> 
+                    <p>
+                            At Tomato Diagnostics, we believe that privacy is a right. We want to empower our users to be the
+                            masters of their identity.
+                            In this privacy policy, we want to help you understand how and why Tomato Diagnostics ("Tomato
+                            Diagnostics,” "we” or "us”) collects and uses
+                            information about you when you use our sites, mobile app, widgets, and other online products and
+                            services (collectively, the "Services") by us
+                            or when you otherwise interact with us or receive a communication from us.
+            
+                            We collect minimal information that we use to provide the functionality of the Services. You don't need
+                            an account for using the Services. We don't automatically track your precise location. You can share as
+                            much or as little about yourself as you want.
+                            Any data we do collect is used primarily to provide our services, which are focused on allowing people
+                            to recognize serious diseases of tomato plants by providing images of the plants leaves. If you have
+                            questions about how we use your data, you can always ask us for more information.
+                    </p>
+                    <div class="overflow-x-scroll w-100">
+                        <table class="p-1">
+                            <tbody>
+                                <tr valign="top">
+                                    <td>
+                                        <table>
+                                            <tbody>
+                                                <tr valign="top">
+                                                    <td width="8"></td>
+                                                    <td colspan="3">
+                                                        <br><u>Information You Provide to Us</u><br>We collect information you
+                                                        provide to us directly when you use the Services. This includes:
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td></td>
+                                                    <td>
+                                                        <em><br>User information</em>
+                                                    </td>
+                                                    <td width="2%"></td>
+                                                    <td>
+                                                        <br>You don't need an account to use Tomato Diagnostics.
+                                                        <br><br>When you use Tomato Diagnostics, you may provide other optional information
+                                                        indirectly through your browser or internet connection.
+                                                        This information is not necessary and will not be used by us at any time, with exception to detected malicious activity.
+                                                        We do not store your any preferences nor settings.
+                                                        <br><br>
+                                                    </td>
+                                                    <td width="8"></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td></td>
+                                                    <td>
+                                                        <em><br>Content you submit</em>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <br>We collect the content you submit to the Services. This includes
+                                                        your images uploaded to our service (Images are first uploaded the moment the "UPLOAD" button is clicked).
+                                                        <br><br>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr valign="top">
+                                                    <td></td>
+                                                    <td>
+                                                        <em><br>Other information</em>
+                                                    </td>
+                                                    <td></td>
+                                                    <td>
+                                                        <br>You may choose to provide other information directly to us. For
+                                                        example, we may collect information when you fill out a form or
+                                                        request customer support, or otherwise communicate with us.
+                                                        <br><br><a id="information-we-collect-automatically"></a>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+        
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </h5> 
+                </div>
+                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% include "includes/footer-info.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}
