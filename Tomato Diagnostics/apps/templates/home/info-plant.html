@@ -3,6 +3,17 @@
 {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
+
+<style>
+  #disease {
+    box-shadow: none;
+  }
+
+  #disease:hover{
+    box-shadow: 80px 50px 50px black;
+  }
+
+</style>
 {% block stylesheets %}{% endblock stylesheets %}
 
 {% block content %}
@@ -19,25 +30,156 @@
 
   <main class="main-content  mt-0">
     <section>
-      <div class="page-header min-vh-75">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-7 col-lg-8 col-md-9 d-flex flex-column mx-auto">
-              <div class="card card-plain mt-8">
-                <div class="card-header pb-0 text-center bg-transparent">
-                  <i class="fa fa-envira fa-7x mb-5" aria-hidden="true"></i>
-                  <h1 class="font-weight-bolder text-info text-gradient mb-5">
-                    Tomato Diagnostics
-                  </h1>
-                 
-                </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                 
-                </div>
-              </div>
-            </div>
+      <div class="container">
+        <div class="row mt-8 text-center">
+
+          <i class="fa fa-envira fa-7x mb-5" aria-hidden="true"></i>
+          
+        </div>      
+        
+        <!--late blight-->
+        <div class="row mb-2">
+          <div class="col-md-1"> 
+          </div> 
+          <div onclick="window.location='/';" class="col-md-2 text-left hover-shadow body-dark-page" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <img src="{{ ASSETS_ROOT }}/img/late-blight.JPG" style="border-radius: 1rem"  width="150px">
+          </div>
+          <div onclick="window.location='/';" class="col-md-8 text-center body-dark-page" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Late Blight (Phytophthora infestans)</h3>
+            <p>One of the most devastating plant diseases of all time. Can develop quickly at any time of the crop </p>
           </div>
         </div>
+
+
+        <!--early blight-->
+        <div class="row mb-2 disease">
+          <div class="col-md-1"> 
+          </div> 
+          <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <img src="{{ ASSETS_ROOT }}/img/early-blight.JPG" style="border-radius: 1rem"  width="150px">
+          </div>
+          <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Early blight  (Alternaria solani)</h3>
+            <p>One of the most common tomato plant diseases. Stem infections easily spread and infect the fruit. </p>
+          </div>
+        </div>
+
+        <!--Septoria leaf spot-->
+        <div class="row mb-2 disease">
+          <div class="col-md-1"> 
+          </div> 
+          <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <img src="{{ ASSETS_ROOT }}/img/septoria-leaf-spots.JPG" style="border-radius: 1rem"  width="150px">
+          </div>
+          <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Septoria leaf spot (Septoria lycopersici)</h3>
+            <p>A common disease for plants. Spreads by fungus spores that can travel great distance </p>
+          </div>
+        </div>
+
+              
+        <!--Tomato yellow leaf curl virus-->
+        <div class="row mb-2 disease">
+          <div class="col-md-1"> 
+          </div> 
+          <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <img src="{{ ASSETS_ROOT }}/img/tomato-yellow-leaf-curl-virus.JPG" style="border-radius: 1rem"  width="150px">
+          </div>
+          <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Tomato yellow leaf curl virus (Begomovirus)</h3>
+            <p>The most destructive disease of tomato. Commonly to be found in tropical and subtropical regions. </p>
+          </div>
+        </div>
+
+
+          <!--Bacterial spot-->
+          <div class="row mb-2 disease">
+            <div class="col-md-1"> 
+            </div> 
+            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+              <img src="{{ ASSETS_ROOT }}/img/bacterial-spots.JPG" style="border-radius: 1rem"  width="150px">
+            </div>
+            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Bacterial spot (Xanthomonas vesicatoria)</h3>
+              <p>A potentially devastating disease that can lead to unmarketable fruit and even plant death. </p>
+            </div>
+          </div>
+
+           <!--Target spot-->
+           <div class="row mb-2 disease">
+            <div class="col-md-1"> 
+            </div> 
+            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+              <img src="{{ ASSETS_ROOT }}/img/target-spots.JPG" style="border-radius: 1rem"  width="150px">
+            </div>
+            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Target spot (Corynespora cassiicola)</h3>
+              <p> Not to be confused with bacterial spot and early blight. Plants are most susceptible just before fruiting. </p>
+            </div>
+          </div>
+
+
+          <!--Tomato mosaic virus-->
+           <div class="row mb-2 disease">
+            <div class="col-md-1"> 
+            </div> 
+            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+              <img src="{{ ASSETS_ROOT }}/img/tomato-mosaic-virus.JPG" style="border-radius: 1rem"  width="150px">
+            </div>
+            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Tomato mosaic virus (Tobamovirus)</h3>
+              <p> Causes severe stunting, distortion and necrosis with a diffuse chlorotic leaf spotting. Difficult to treat. </p>
+            </div>
+          </div>
+
+
+          <!--Leaf mold-->
+          <div class="row mb-2 disease">
+            <div class="col-md-1"> 
+            </div> 
+            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+              <img src="{{ ASSETS_ROOT }}/img/leaf-mold.JPG" style="border-radius: 1rem"  width="150px">
+            </div>
+            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Leaf mold (Cladosporium fulvum)</h3>
+              <p> Common disease after longer periods of high humidity. Seen primarily in hoophouses and greenhouses. </p>
+            </div>
+          </div>
+
+
+
+          <!--Two‑spotted spider mites-->
+          <div class="row mb-2 disease">
+            <div class="col-md-1"> 
+            </div> 
+            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+              <img src="{{ ASSETS_ROOT }}/img/spider-mites-two-spots.JPG" style="border-radius: 1rem"  width="150px">
+            </div>
+            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Two‑spotted spider mites (Tetranychus urticae)</h3>
+              <p> Causes serious damage to crops during hot dry weather. Mites injures tomatoes and lives on the leafs. </p>
+            </div>
+          </div>
+
+
+
+          <!--Powdery Mildew-->
+          <div class="row mb-2 disease">
+            <div class="col-md-1"> 
+            </div> 
+            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+              <img src="{{ ASSETS_ROOT }}/img/powdered-mildew.jpg" style="border-radius: 1rem"  width="150px">
+            </div>
+            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Powdery Mildew (Tetranychus urticae)</h3>
+              <p> An important disease problem worldwide. The disease mainly affects leaves causing drying. </p>
+            </div>
+          </div>
+
+
+
+
+
       </div>
     </section>
   </main>
