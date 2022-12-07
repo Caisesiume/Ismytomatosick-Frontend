@@ -1,110 +1,9 @@
+<!-- [CODED BY CHRISTOFER & SIMON] Start  -->
 {% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
-<!-- [CODED BY SIMON] Start-->
-<style>
-     :root {
-        --imgwidth: 250px;
-    }
-    
-    .slider {
-        width: 100%;
-    }
-    
-    .slider input {
-        display: none;
-    }
-    
-    .spinner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        min-height: var(--imgwidth);
-        perspective: calc(200vw / 6);
-    }
-    
-    .spinner .item {
-        position: absolute;
-        transition: transform 0.25s;
-        user-select: none;
-        cursor: pointer;
-    }
-    
-    .spinner .item img {
-        height: var(--imgwidth);
-        width: var(--imgwidth);
-        object-fit: cover;
-        border: none;
-        border-radius: 8%;
-    }
-    
-    #t-1:checked~.spinner label[for="t-3"],
-    #t-2:checked~.spinner label[for="t-4"],
-    #t-3:checked~.spinner label[for="t-5"],
-    #t-4:checked~.spinner label[for="t-1"],
-    #t-5:checked~.spinner label[for="t-2"] {
-        transform: translate3d(400px, 20px, -200px) rotate(2deg);
-        opacity: 60%;
-        z-index: 2;
-    }
-    
-    #t-1:checked~.spinner label[for="t-2"],
-    #t-2:checked~.spinner label[for="t-3"],
-    #t-3:checked~.spinner label[for="t-4"],
-    #t-4:checked~.spinner label[for="t-5"],
-    #t-5:checked~.spinner label[for="t-1"] {
-        transform: translate3d(200px, 10px, -90px) rotate(1deg);
-        opacity: 95%;
-        z-index: 3;
-    }
-    
-    #t-2:checked~.spinner label[for="t-1"],
-    #t-3:checked~.spinner label[for="t-2"],
-    #t-4:checked~.spinner label[for="t-3"],
-    #t-5:checked~.spinner label[for="t-4"],
-    #t-1:checked~.spinner label[for="t-5"] {
-        transform: translate3d(-200px, 10px, -90px) rotate(-1deg);
-        opacity: 95%;
-        z-index: 3;
-    }
-    
-    #t-3:checked~.spinner label[for="t-1"],
-    #t-4:checked~.spinner label[for="t-2"],
-    #t-5:checked~.spinner label[for="t-3"],
-    #t-2:checked~.spinner label[for="t-5"],
-    #t-1:checked~.spinner label[for="t-4"] {
-        transform: translate3d(-400px, 20px, -180px) rotate(-2deg);
-        opacity: 60%;
-        z-index: 2;
-    }
-    
-    #t-1:checked~.spinner label[for="t-1"],
-    #t-2:checked~.spinner label[for="t-2"],
-    #t-3:checked~.spinner label[for="t-3"],
-    #t-4:checked~.spinner label[for="t-4"],
-    #t-5:checked~.spinner label[for="t-4"],
-    #t-5:checked~.spinner label[for="t-5"] {
-        z-index: 4;
-    }
-    /* Makes sure the carousel isnt displayed on smaller screens where it doesnt fill a purpose */
-    
-    @media screen and (max-width: 768px) {
-        .carousel-1 {
-            display: none;
-        }
-        .spinner {
-            perspective: 10%;
-        }
-    }
-    
-    .radbutton {
-        display: none;
-    }
-</style>
-<!-- [CODED BY SIMON] End-->
 
-<!-- [CODED BY CHRISTOFER & SIMON] Start  -->
+
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
 <div class="container position-sticky z-index-sticky top-0">
@@ -117,43 +16,51 @@
     </div>
 </div>
 
-<main class="main-content  mt-0">
+<main class="main-content  mt-8 text-center">
     <section>
+        <!-- [CODED BY CHRISTOFER & SIMON] End  -->
+
+        <!-- [CODED BY SIMON] Start  -->
         <div class="container">
-            <div class="row mt-8 text-center">
+            <!-- Only display images on screens larger than 992px (lg) -->
+            <div id="carousel-1" class="carousel slide d-none d-lg-block" data-bs-ride="false" style="width: 15vw; left: calc(50% - (15vw/2));">
+                <div class="carousel-inner" style="border: none; border-radius: 0.5rem;box-shadow: 0px 10px 20px black;">
+                    <div class="carousel-item active">
+                        <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/spider_1.jpg" alt="picture">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/spider_2.jpg" alt="picture">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/spider_3.jpg" alt="picture">
+                    </div>
 
-                <i class="fa fa-envira fa-7x mb-5" aria-hidden="true"></i>
-
-            </div>
-            <!-- input plant info -->
-            <!-- PIC CAROUSEL -->
-            <div class="carousel-1">
-                <input class="radbutton" type="radio" name="carousel" id="t-1">
-                <input class="radbutton" type="radio" name="carousel" id="t-2">
-                <input class="radbutton" type="radio" name="carousel" id="t-3" checked>
-                <input class="radbutton" type="radio" name="carousel" id="t-4">
-                <input class="radbutton" type="radio" name="carousel" id="t-5">
-                <div class="spinner">
-                    <label class="item" for="t-1">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_1.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-2">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_2.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-3">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_3.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-4">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_4.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-5">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_5.JPG" alt="picture">
-                      </label>
+                    <div class="carousel-item">
+                        <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/spider_4.jpg" alt="picture">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/spider_5.jpg" alt="picture">
+                    </div>
                 </div>
+                <div>
+                    <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </div>
+                <ol class="carousel-indicators">
+                    <li class="active" data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                    <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
+                </ol>
             </div>
-
-
-            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-3">
+            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-5" style="z-index:4">
                 Two-spotted Spider Mite, what is it?
             </h3>
             <p>
@@ -165,7 +72,7 @@
                 with the numerous natural enemies that help to manage mite populations. As with most pests, catching the problem early will mean easier control. Eggs are laid singly, up to 100 per female, during her 3- to 4-week life span. Eggs hatch
                 into larvae in as few as 3 days. Following a brief larval stage, several nymphal stages occur before adults appear. Egg to adult cycle can be completed in 7-14 days depending on temperature
             </p>
-            <h3>
+            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-3">
                 Manage Two-spotted Spider Mite
             </h3>
             <p>
@@ -175,7 +82,7 @@
                 and the tiny adults can be seen with the naked eye.
             </p>
             <h5>Important to keep in mind</h5>
-            <ul>
+            <ul style="list-style: none">
                 <li>
                     <p>Avoid weedy fields and do not plant eggplant adjacent to legume forage crops.</p>
                 </li>
@@ -190,40 +97,40 @@
                 </li>
             </ul>
             <h4>Controls</h4>
-            <p>
+            <p style="font-weight: bolder">
                 For control, use selective products whenever possible. Selective products which have worked well in the field include:
             </p>
-            <ul>
+            <ul style="list-style: none">
                 <li>
-                    <p>bifenazate (Acramite): Group UN, a long residual nerve poison</p>
+                    <p>Bifenazate (Acramite): Group UN, a long residual nerve poison</p>
                 </li>
                 <li>
-                    <p>abamectin (Agri-Mek): Group 6, derived from a soil bacterium</p>
+                    <p>Abamectin (Agri-Mek): Group 6, derived from a soil bacterium</p>
                 </li>
                 <li>
-                    <p>spirotetramat (Movento): Group 23, mainly affects immature stages</p>
+                    <p>Spirotetramat (Movento): Group 23, mainly affects immature stages</p>
                 </li>
                 <li>
-                    <p>spiromesifen (Oberon 2SC): Group 23, mainly affects immature stages</p>
-                </li>
-            </ul>
-            <p>OMRI-listed products include:</p>
-            <ul>
-                <li>
-                    <p>insecticidal soap (M-Pede)</p>
-                </li>
-                <li>
-                    <p>neem oil (Trilogy)</p>
-                </li>
-                <li>
-                    <p>soybean oil (Golden Pest Spray Oil)</p>
+                    <p>Spiromesifen (Oberon 2SC): Group 23, mainly affects immature stages</p>
                 </li>
             </ul>
-            <p>
+            <p style="font-weight: bolder">OMRI-listed products include:</p>
+            <ul style="list-style: none">
+                <li>
+                    <p>Insecticidal soap (M-Pede)</p>
+                </li>
+                <li>
+                    <p>Neem oil (Trilogy)</p>
+                </li>
+                <li>
+                    <p>Soybean oil (Golden Pest Spray Oil)</p>
+                </li>
+            </ul>
+            <p class="mt-3">
                 Natural enemies of mites are present in and around fields and can keep mite populations low. Many insecticides used for control of insect pests severely reduce numbers of beneficial insects that keep mite populations in check. Therefore, apply insecticides
                 only as‑needed, rather than at regularly scheduled intervals. When possible, select pesticides which will have the least impact on beneficial insects.
             </p>
-            <h3>
+            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-6">
                 Symtomps & Signs?
             </h3>
             <p>
@@ -231,25 +138,29 @@
                 blotched with pale yellow, reddish brown spots ranging from small to large areas on both upper and lower leaf surfaces. Other symptoms caused by either severe or constant attack include distorted leaves, overall loss of plant vigor (in
                 spite of adequate moisture and nutrition), whitening or spotting of leaves, yellowing of the plant or some of the leaves, and in some cases loss of foliage and death.
             </p>
-            <h3>
+            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-3">
                 Looking for more information?
             </h3>
             <p> All information stated on this page are directly taken from
                 <a href="https://ag.umass.edu/vegetable/fact-sheets/two-spotted-spider-mite"> University of Massachusetts Amherst - Two Spotted spider mite </a> (follow link for more information). </p>
-            <br> Other sources to checkout on this topic:
+            <br> Other sources to checkout on this topic <span style="font-weight: bolder">(external links)</span>:
             <ul>
-                <li>
+                <li style="list-style: none">
                     <a href="https://entomology.ca.uky.edu/ef310">
                     University of Kentucky College of Agriculture - Two-Spotted Spider Mite
               </a>
                 </li>
-                <li>
+                <li style="list-style: none">
                     <a href="https://blogs.cornell.edu/livegpath/gallery/tomato/powdery-mildew-on-tomatoes/">
                     University of Flodria  - Two-Spotted Spider Mite
               </a>
                 </li>
             </ul>
+            <!-- [CODED BY SIMON] END -->
+            
+            <!-- [CODED BY CHRISTOFER & SIMON] Start  -->
             </p>
+        </div>
         </div>
     </section>
 </main>
@@ -257,6 +168,8 @@
 {% include "includes/footer-fullscreen.html" %} {% endblock content %}
 
 <!-- Specific JS goes HERE -->
+<script src="{{ ASSETS_ROOT }}/js/core/bootstrap.min.js"></script>
+
 {% block javascripts %} {% endblock javascripts %}
 
 
