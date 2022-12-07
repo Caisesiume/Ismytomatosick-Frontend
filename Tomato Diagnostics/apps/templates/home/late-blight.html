@@ -24,111 +24,7 @@
 
   <main class="main-content  mt-8">
     <section>
-      <div class="container">
-        <!-- [CODED BY CHRISTOFER & SIMON] End  --> 
-        <!-- [CODED BY SIMON] Start  --> 
-        <div id="carousel-1" class="carousel slide d-none d-lg-block" data-bs-ride="false" style="width: 15vw; left: calc(50% - (15vw/2));">
-          <div class="carousel-inner" style="border: none; border-radius: 0.5rem;box-shadow: 0px 10px 20px black;">
-              <div class="carousel-item active">
-                  <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/late1.JPG" alt="picture">
-              </div>
-              <div class="carousel-item">
-                  <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/late2.JPG" alt="picture">
-              </div>
-              <div class="carousel-item">
-                  <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/late3.JPG" alt="picture">
-              </div>
-
-              <div class="carousel-item">
-                  <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/late4.JPG" alt="picture">
-              </div>
-              <div class="carousel-item">
-                  <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/late5.JPG" alt="picture">
-              </div>
-          </div>
-          <div>
-              <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                  <span class="visually-hidden">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                  <span class="visually-hidden">Next</span>
-              </a>
-          </div>
-          <ol class="carousel-indicators">
-              <li class="active" data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
-              <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
-              <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
-              <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
-              <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
-          </ol>
-      </div> 
-      <!-- [CODED BY SIMON] End  --> 
-      <!-- [CODED BY CHRISTOFER] Start  --> 
-
-        <div class="row text-center">
-          <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-5">
-            Late Blight, what is it?
-          </h3>
-  
-          <p> 
-            Late blight (Phytophthora infestans) is one of the most serious fungal diseases that can affect tomatoes and potatoes.
-
-            Late blight is spread from infected transplants, volunteer potato or tomato plants, and certain weeds botanically related to tomatoes. 
-            Spores of this fungus can be airborne and travel great distances in storms. Rain deposits spores onto plants, causing infection. 
-            Late blight is favored by cool, wet weather and will cycle repeatedly if weather conditions are favorable. 
-          </p>
-  
-          <h3 class="font-weight-bolder text-info text-gradient mb-5">
-            Manage Late Blight
-          </h3>
-  
-          </div>
-          <div class="row text-left">
-          <p> 
-            Since late blight favors wet, cool weather for infection, cultural practices have a relatively small effect on controlling this disease. 
-            Bottom-watering via drip irrigation will be beneficial. Plants should be spaced relatively wide within the row to facilitate air movement, 
-            and plants should not be handled when the foliage is wet.
-
-            Mulching with plastic or an organic material will reduce the development of early blight more than late blight, 
-            but these diseases often work in tandem to destroy tomato plants. Staking or caging tomatoes will result in faster drying of the foliage. 
-            Before planting, inspect transplants for any symptoms of disease. Avoid planting tomatoes on sites that were previously in potatoes or close to potatoes. 
-            Sequential planting or planting several crops of tomatoes over time will reduce the risk of late blight destroying all tomatoes at once.
-
-            Spraying fungicides is the most effective way to prevent late blight. For conventional gardeners and commercial producers, 
-            protectant fungicides such as chlorothalonil (e.g., Bravo, Echo, Equus, or Daconil) and Mancozeb (Manzate) can be used. 
-            Fixed copper products (Kocide) can be used by organic gardeners to prevent late blight infection. Read the label on any fungicide before application. 
-            For fungicides that target the fungus specifically, consult the 2009 Commercial Vegetable Production Guide.
-
-            If conditions are favorable for late blight development, start a weekly spray application immediately after transplanting. 
-            Otherwise, apply protectant fungicides beginning at flowering for control of late blight and other tomato diseases.
-        
-  
-          </p>
-          </div>
-  
-          <div class="row text-center">
-  
-          <h3 class="font-weight-bolder text-info text-gradient mb-5">
-            Symptoms & Signs
-          </h3>
-          <p> Late blight symptoms include leaf, stem, and fruit lesions that have a water-soaked appearance. 
-            The lesions eventually turn brown and the plant looks like it has been frost-damaged or blasted by a blowtorch. 
-            Unlike early blight, which typically begins infection on the lower leaves of the tomato plant, 
-            late blight infections seem to move from the outside of the canopy inward.
-            Under favorable conditions, all parts of the plant can become infected. 
-            Complete infection of a tomato field can occur in a few days. Large rough, brown lesions appear on tomato fruits 
-          </p>
-          <p> All information stated on this page are directly taken from 
-            <a href="https://extension.wvu.edu/lawn-gardening-pests/plant-disease/fruit-vegetable-diseases/late-blight-tomatoes"> WVU Extension </a> (follow link for more information). </p>
-    
-            </p>
-          </div>
-  
- 
-
-      </div>
+      {% include "includes/late-blight-info.html" %}
     </section>
   </main>
 
@@ -140,5 +36,3 @@
 {% block javascripts %}
 {% endblock javascripts %}
 
-
-<!-- [CODED BY CHRISTOFER] End  --> 
