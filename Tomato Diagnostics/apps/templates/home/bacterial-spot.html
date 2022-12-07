@@ -18,17 +18,54 @@
     </div>
 </div>
 
-<main class="main-content  mt-0">
+
+
+<main class="main-content mt-8 text-center">
     <section>
         <div class="container">
-            <div class="row mt-8 text-center">
+            <div class="container">
+                <!-- [CODED BY CHRISTOFER & SIMON] End  -->
+                <!-- [CODED BY SIMON] Start -->
+                <div id="carousel-1" class="carousel slide d-none d-lg-block" data-bs-ride="false" style="width: 15vw; left: calc(50% - (15vw/2));">
+                    <div class="carousel-inner" style="border: none; border-radius: 0.5rem;box-shadow: 0px 10px 20px black;">
+                        <div class="carousel-item active">
+                            <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/bact1.JPG" alt="picture">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/bact2.JPG" alt="picture">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/bact3.JPG" alt="picture">
+                        </div>
+    
+                        <div class="carousel-item">
+                            <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/bact4.JPG" alt="picture">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 d-block" src="{{ASSETS_ROOT}}/img/bact5.JPG" alt="picture">
+                        </div>
+                    </div>
+                    <div>
+                        <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li class="active" data-bs-target="#carousel-1" data-bs-slide-to="0"></li>
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="3"></li>
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="4"></li>
+                    </ol>
+                </div>
+            
 
-                <i class="fa fa-envira fa-7x mb-5" aria-hidden="true"></i>
-
-            </div>
-            <!-- input plant info -->
-
-            <h3 class="font-weight-bolder text-info text-gradient mb-5">
+            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-5">
                 Bacterial spot, what is it?
             </h3>
             <p>
@@ -93,4 +130,4 @@
 {% block javascripts %} {% endblock javascripts %}
 
 
-<!-- [CODED BY CHRISTOFER & SIMON] End  -->
+<!-- [CODED BY SIMON] End  -->
