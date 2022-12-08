@@ -1,110 +1,9 @@
+<!-- [CODED BY CHRISTOFER & SIMON] Start  -->
 {% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
-<!-- [CODED BY SIMON] Start-->
-<style>
-     :root {
-        --imgwidth: 250px;
-    }
-    
-    .slider {
-        width: 100%;
-    }
-    
-    .slider input {
-        display: none;
-    }
-    
-    .spinner {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        min-height: var(--imgwidth);
-        perspective: calc(200vw / 6);
-    }
-    
-    .spinner .item {
-        position: absolute;
-        transition: transform 0.25s;
-        user-select: none;
-        cursor: pointer;
-    }
-    
-    .spinner .item img {
-        height: var(--imgwidth);
-        width: var(--imgwidth);
-        object-fit: cover;
-        border: none;
-        border-radius: 8%;
-    }
-    
-    #t-1:checked~.spinner label[for="t-3"],
-    #t-2:checked~.spinner label[for="t-4"],
-    #t-3:checked~.spinner label[for="t-5"],
-    #t-4:checked~.spinner label[for="t-1"],
-    #t-5:checked~.spinner label[for="t-2"] {
-        transform: translate3d(400px, 20px, -200px) rotate(2deg);
-        opacity: 60%;
-        z-index: 2;
-    }
-    
-    #t-1:checked~.spinner label[for="t-2"],
-    #t-2:checked~.spinner label[for="t-3"],
-    #t-3:checked~.spinner label[for="t-4"],
-    #t-4:checked~.spinner label[for="t-5"],
-    #t-5:checked~.spinner label[for="t-1"] {
-        transform: translate3d(200px, 10px, -90px) rotate(1deg);
-        opacity: 95%;
-        z-index: 3;
-    }
-    
-    #t-2:checked~.spinner label[for="t-1"],
-    #t-3:checked~.spinner label[for="t-2"],
-    #t-4:checked~.spinner label[for="t-3"],
-    #t-5:checked~.spinner label[for="t-4"],
-    #t-1:checked~.spinner label[for="t-5"] {
-        transform: translate3d(-200px, 10px, -90px) rotate(-1deg);
-        opacity: 95%;
-        z-index: 3;
-    }
-    
-    #t-3:checked~.spinner label[for="t-1"],
-    #t-4:checked~.spinner label[for="t-2"],
-    #t-5:checked~.spinner label[for="t-3"],
-    #t-2:checked~.spinner label[for="t-5"],
-    #t-1:checked~.spinner label[for="t-4"] {
-        transform: translate3d(-400px, 20px, -180px) rotate(-2deg);
-        opacity: 60%;
-        z-index: 2;
-    }
-    
-    #t-1:checked~.spinner label[for="t-1"],
-    #t-2:checked~.spinner label[for="t-2"],
-    #t-3:checked~.spinner label[for="t-3"],
-    #t-4:checked~.spinner label[for="t-4"],
-    #t-5:checked~.spinner label[for="t-4"],
-    #t-5:checked~.spinner label[for="t-5"] {
-        z-index: 4;
-    }
-    /* Makes sure the carousel isnt displayed on smaller screens where it doesnt fill a purpose */
-    
-    @media screen and (max-width: 768px) {
-        .carousel-1 {
-            display: none;
-        }
-        .spinner {
-            perspective: 10%;
-        }
-    }
-    
-    .radbutton {
-        display: none;
-    }
-</style>
-<!-- [CODED BY SIMON] End-->
 
-<!-- [CODED BY CHRISTOFER & SIMON] Start  -->
+
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
 <div class="container position-sticky z-index-sticky top-0">
@@ -117,147 +16,20 @@
     </div>
 </div>
 
-<main class="main-content  mt-0">
+<main class="main-content  mt-8 text-center">
     <section>
-        <div class="container">
-            <div class="row mt-8 text-center">
-
-                <i class="fa fa-envira fa-7x mb-5" aria-hidden="true"></i>
-
-            </div>
-            <!-- input plant info -->
-            <!-- PIC CAROUSEL -->
-            <div class="carousel-1">
-                <input class="radbutton" type="radio" name="carousel" id="t-1">
-                <input class="radbutton" type="radio" name="carousel" id="t-2">
-                <input class="radbutton" type="radio" name="carousel" id="t-3" checked>
-                <input class="radbutton" type="radio" name="carousel" id="t-4">
-                <input class="radbutton" type="radio" name="carousel" id="t-5">
-                <div class="spinner">
-                    <label class="item" for="t-1">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_1.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-2">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_2.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-3">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_3.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-4">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_4.JPG" alt="picture">
-                      </label>
-                    <label class="item" for="t-5">
-                        <img src="{{ ASSETS_ROOT }}/img/spider_5.JPG" alt="picture">
-                      </label>
-                </div>
-            </div>
-
-
-            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-3">
-                Two-spotted Spider Mite, what is it?
-            </h3>
-            <p>
-                <span style="font-weight:bold">Two-spotted Spider Mite
-              </span> is the most common mite species that attacks vegetable and fruit crops in New England among other locations around the globe. Spider mites can occur in tomato, eggplant, potato, vine crops such as melons, cucumbers,
-                and other crops. Two-spotted spider mites are one of the most important pests of eggplant.<br><br>
-                <span style="font-weight:bold">Two-spotted Spider Mite
-                    </span> (Tetranychus Urticae) have up to 20 generations per year and are favored by excess nitrogen and dry and dusty conditions. Outbreaks are often caused by the use of broad-spectrum insecticides which interfere
-                with the numerous natural enemies that help to manage mite populations. As with most pests, catching the problem early will mean easier control. Eggs are laid singly, up to 100 per female, during her 3- to 4-week life span. Eggs hatch
-                into larvae in as few as 3 days. Following a brief larval stage, several nymphal stages occur before adults appear. Egg to adult cycle can be completed in 7-14 days depending on temperature
-            </p>
-            <h3>
-                Manage Two-spotted Spider Mite
-            </h3>
-            <p>
-                Watch for spider mites in greenhouses where vegetable transplants are growing. Also scout eggplants in the field. Checking for mites must be done by examining foliage. Adult mites are not found on sticky cards. Mites often develop as localized infestations
-                on particular groups of plants such as beans or tomatoes. Sample plants by turning over leaves and with a hands-free magnifier (Optivisor) or hand lens, check for the presence of spider mites as well as symptoms or webbing.<br><br>                Adult females are approximately 1/50-inch long (0,5 mm), slightly orange or pale green in color with two dark spots on their body. All mobile stages are able to pierce plant tissue with their mouth-parts and remove plant fluids. Saliva
-                injected during feeding may also cause discoloration, necrosis or abnormalities on leaves, stems and fruits. Most spider mites are found on the underside of leaves. A 10X hand lens is key for identifying the mite species, but injury, webbing,
-                and the tiny adults can be seen with the naked eye.
-            </p>
-            <h5>Important to keep in mind</h5>
-            <ul>
-                <li>
-                    <p>Avoid weedy fields and do not plant eggplant adjacent to legume forage crops.</p>
-                </li>
-                <li>
-                    <p>Avoid early season, broad-spectrum insecticide applications for other pests.</p>
-                </li>
-                <li>
-                    <p>Do not over-fertilize. Outbreaks may be worsened by excess nitrogen fertilization.</p>
-                </li>
-                <li>
-                    <p>Overhead irrigation or prolonged periods of rain can help reduce populations.</p>
-                </li>
-            </ul>
-            <h4>Controls</h4>
-            <p>
-                For control, use selective products whenever possible. Selective products which have worked well in the field include:
-            </p>
-            <ul>
-                <li>
-                    <p>bifenazate (Acramite): Group UN, a long residual nerve poison</p>
-                </li>
-                <li>
-                    <p>abamectin (Agri-Mek): Group 6, derived from a soil bacterium</p>
-                </li>
-                <li>
-                    <p>spirotetramat (Movento): Group 23, mainly affects immature stages</p>
-                </li>
-                <li>
-                    <p>spiromesifen (Oberon 2SC): Group 23, mainly affects immature stages</p>
-                </li>
-            </ul>
-            <p>OMRI-listed products include:</p>
-            <ul>
-                <li>
-                    <p>insecticidal soap (M-Pede)</p>
-                </li>
-                <li>
-                    <p>neem oil (Trilogy)</p>
-                </li>
-                <li>
-                    <p>soybean oil (Golden Pest Spray Oil)</p>
-                </li>
-            </ul>
-            <p>
-                Natural enemies of mites are present in and around fields and can keep mite populations low. Many insecticides used for control of insect pests severely reduce numbers of beneficial insects that keep mite populations in check. Therefore, apply insecticides
-                only as‑needed, rather than at regularly scheduled intervals. When possible, select pesticides which will have the least impact on beneficial insects.
-            </p>
-            <h3>
-                Symtomps & Signs?
-            </h3>
-            <p>
-                In the field, spider mites are favored by hot, dry, and dusty conditions, which also aggravates injury by stressing the plant. Damage is often underestimated since the wounds and the pest are not apparent to our eyes without close inspection. Leaves become
-                blotched with pale yellow, reddish brown spots ranging from small to large areas on both upper and lower leaf surfaces. Other symptoms caused by either severe or constant attack include distorted leaves, overall loss of plant vigor (in
-                spite of adequate moisture and nutrition), whitening or spotting of leaves, yellowing of the plant or some of the leaves, and in some cases loss of foliage and death.
-            </p>
-            <h3>
-                Looking for more information?
-            </h3>
-            <p> All information stated on this page are directly taken from
-                <a href="https://ag.umass.edu/vegetable/fact-sheets/two-spotted-spider-mite"> University of Massachusetts Amherst - Two Spotted spider mite </a> (follow link for more information). </p>
-            <br> Other sources to checkout on this topic:
-            <ul>
-                <li>
-                    <a href="https://entomology.ca.uky.edu/ef310">
-                    University of Kentucky College of Agriculture - Two-Spotted Spider Mite
-              </a>
-                </li>
-                <li>
-                    <a href="https://blogs.cornell.edu/livegpath/gallery/tomato/powdery-mildew-on-tomatoes/">
-                    University of Flodria  - Two-Spotted Spider Mite
-              </a>
-                </li>
-            </ul>
-            </p>
-        </div>
+        
+        {% include "includes/two-spotted-spider-mites.html" %}
+        
     </section>
 </main>
 
 {% include "includes/footer-fullscreen.html" %} {% endblock content %}
 
 <!-- Specific JS goes HERE -->
+<script src="{{ ASSETS_ROOT }}/js/core/bootstrap.min.js"></script>
+
 {% block javascripts %} {% endblock javascripts %}
 
 
-<!-- [CODED BY CHRISTOFER & SIMON] End  -->
+<!-- [CODED BY SIMON] End  -->
