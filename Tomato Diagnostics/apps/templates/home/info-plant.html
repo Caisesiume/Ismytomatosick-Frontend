@@ -1,8 +1,13 @@
+<!-- [CODED BY CHRISTOFER & SIMON] Start  --> 
+
+
+
 {% extends 'layouts/base-fullscreen.html' %}
 
 {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
+
 
 <style>
   #disease {
@@ -41,10 +46,10 @@
         <div class="row mb-2">
           <div class="col-md-1"> 
           </div> 
-          <div onclick="window.location='/';" class="col-md-2 text-left hover-shadow body-dark-page" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+          <div onclick="window.location.href='/late-blight';" class="col-md-2 text-left hover-shadow body-dark-page" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
             <img src="{{ ASSETS_ROOT }}/img/late-blight.JPG" style="border-radius: 1rem"  width="150px">
           </div>
-          <div onclick="window.location='/';" class="col-md-8 text-center body-dark-page" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+          <div onclick="window.location.href='/late-blight';" class="col-md-8 text-center body-dark-page" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
             <h3>Late Blight (Phytophthora infestans)</h3>
             <p>One of the most devastating plant diseases of all time. Can develop quickly at any time of the crop </p>
           </div>
@@ -55,11 +60,11 @@
         <div class="row mb-2 disease">
           <div class="col-md-1"> 
           </div> 
-          <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+          <div onclick="window.location.href='/early-blight';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
             <img src="{{ ASSETS_ROOT }}/img/early-blight.JPG" style="border-radius: 1rem"  width="150px">
           </div>
-          <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-            <h3>Early blight  (Alternaria solani)</h3>
+          <div onclick="window.location.href='/early-blight';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Early Blight  (Alternaria solani)</h3>
             <p>One of the most common tomato plant diseases. Stem infections easily spread and infect the fruit. </p>
           </div>
         </div>
@@ -68,11 +73,11 @@
         <div class="row mb-2 disease">
           <div class="col-md-1"> 
           </div> 
-          <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+          <div onclick="window.location.href='/septoria';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
             <img src="{{ ASSETS_ROOT }}/img/septoria-leaf-spots.JPG" style="border-radius: 1rem"  width="150px">
           </div>
-          <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-            <h3>Septoria leaf spot (Septoria lycopersici)</h3>
+          <div onclick="window.location.href='/septoria';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Septoria Leaf Spot (Septoria lycopersici)</h3>
             <p>A common disease for plants. Spreads by fungus spores that can travel great distance </p>
           </div>
         </div>
@@ -82,11 +87,11 @@
         <div class="row mb-2 disease">
           <div class="col-md-1"> 
           </div> 
-          <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+          <div onclick="window.location.href='/yellow-curl';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
             <img src="{{ ASSETS_ROOT }}/img/tomato-yellow-leaf-curl-virus.JPG" style="border-radius: 1rem"  width="150px">
           </div>
-          <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-            <h3>Tomato yellow leaf curl virus (Begomovirus)</h3>
+          <div onclick="window.location.href='/yellow-curl';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <h3>Tomato Yellow Leaf Curl Virus (Begomovirus)</h3>
             <p>The most destructive disease of tomato. Commonly to be found in tropical and subtropical regions. </p>
           </div>
         </div>
@@ -96,11 +101,11 @@
           <div class="row mb-2 disease">
             <div class="col-md-1"> 
             </div> 
-            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <div onclick="window.location.href='/bacterial-spot';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
               <img src="{{ ASSETS_ROOT }}/img/bacterial-spots.JPG" style="border-radius: 1rem"  width="150px">
             </div>
-            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-              <h3>Bacterial spot (Xanthomonas vesicatoria)</h3>
+            <div onclick="window.location.href='/bacterial-spot';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Bacterial Spot (Xanthomonas vesicatoria)</h3>
               <p>A potentially devastating disease that can lead to unmarketable fruit and even plant death. </p>
             </div>
           </div>
@@ -109,11 +114,11 @@
            <div class="row mb-2 disease">
             <div class="col-md-1"> 
             </div> 
-            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <div onclick="window.location.href='/target-spot';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
               <img src="{{ ASSETS_ROOT }}/img/target-spots.JPG" style="border-radius: 1rem"  width="150px">
             </div>
-            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-              <h3>Target spot (Corynespora cassiicola)</h3>
+            <div onclick="window.location.href='/target-spot';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Target Spot (Corynespora cassiicola)</h3>
               <p> Not to be confused with bacterial spot and early blight. Plants are most susceptible just before fruiting. </p>
             </div>
           </div>
@@ -123,11 +128,11 @@
            <div class="row mb-2 disease">
             <div class="col-md-1"> 
             </div> 
-            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <div onclick="window.location.href='/mosaic';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
               <img src="{{ ASSETS_ROOT }}/img/tomato-mosaic-virus.JPG" style="border-radius: 1rem"  width="150px">
             </div>
-            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-              <h3>Tomato mosaic virus (Tobamovirus)</h3>
+            <div onclick="window.location.href='/mosaic';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Tomato Mosaic Virus (Tobamovirus)</h3>
               <p> Causes severe stunting, distortion and necrosis with a diffuse chlorotic leaf spotting. Difficult to treat. </p>
             </div>
           </div>
@@ -137,11 +142,11 @@
           <div class="row mb-2 disease">
             <div class="col-md-1"> 
             </div> 
-            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <div onclick="window.location.href='/leaf-mold';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
               <img src="{{ ASSETS_ROOT }}/img/leaf-mold.JPG" style="border-radius: 1rem"  width="150px">
             </div>
-            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-              <h3>Leaf mold (Cladosporium fulvum)</h3>
+            <div onclick="window.location.href='/leaf-mold';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Leaf Mold (Cladosporium fulvum)</h3>
               <p> Common disease after longer periods of high humidity. Seen primarily in hoophouses and greenhouses. </p>
             </div>
           </div>
@@ -152,11 +157,11 @@
           <div class="row mb-2 disease">
             <div class="col-md-1"> 
             </div> 
-            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <div onclick="window.location.href='/two-spotted';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
               <img src="{{ ASSETS_ROOT }}/img/spider-mites-two-spots.JPG" style="border-radius: 1rem"  width="150px">
             </div>
-            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
-              <h3>Two‑spotted spider mites (Tetranychus urticae)</h3>
+            <div onclick="window.location.href='/two-spotted';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+              <h3>Two‑Spotted Spider Mites (Tetranychus urticae)</h3>
               <p> Causes serious damage to crops during hot dry weather. Mites injures tomatoes and lives on the leafs. </p>
             </div>
           </div>
@@ -167,26 +172,25 @@
           <div class="row mb-2 disease">
             <div class="col-md-1"> 
             </div> 
-            <div onclick="window.location='/';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+            <div onclick="window.location.href='/powdery-mildew';" class="col-md-2 text-left" style="cursor: pointer; padding:0px 0px; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
               <img src="{{ ASSETS_ROOT }}/img/powdered-mildew.jpg" style="border-radius: 1rem"  width="150px">
             </div>
-            <div onclick="window.location='/';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
+            <div onclick="window.location.href='/powdery-mildew';" class="col-md-8 text-center" style="cursor: pointer; border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">     
               <h3>Powdery Mildew (Tetranychus urticae)</h3>
               <p> An important disease problem worldwide. The disease mainly affects leaves causing drying. </p>
             </div>
           </div>
 
-
-
-
-
       </div>
     </section>
   </main>
 
-  {% include "includes/footer-fullscreen.html" %}
+ {% include "includes/footer-fullscreen.html" %}
 
 {% endblock content %}
 
 <!-- Specific JS goes HERE --> 
 {% block javascripts %}{% endblock javascripts %}
+
+
+<!-- [CODED BY CHRISTOFER & SIMON] End  --> 

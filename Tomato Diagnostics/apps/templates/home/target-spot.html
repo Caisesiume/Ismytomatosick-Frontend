@@ -1,0 +1,39 @@
+<!-- [CODED BY CHRISTOFER & SIMON] Start  --> 
+
+
+{% extends 'layouts/base-fullscreen.html' %}
+
+{% block title %} Sign IN {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+
+        {% include "includes/navigation-fullscreen.html" %}
+
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content  mt-8">
+    <section>
+      {% include "includes/target-spot-info.html" %}
+    </section>
+  </main>
+
+ {% include "includes/footer-fullscreen.html" %}
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+{% endblock javascripts %}
+
+
+<!-- [CODED BY CHRISTOFER] End  --> 
