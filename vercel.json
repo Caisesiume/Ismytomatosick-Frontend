@@ -4,7 +4,8 @@
         "src": "TomatoDiagnostics/core/wsgi.py",
         "use": "@ardnt/vercel-python-wsgi",
         "config": {
-            "maxLambdaSize": "50mb"
+            "maxLambdaSize": "50mb",
+            "runtime": "python3.9"
         }
     }],
     "routes": [{
