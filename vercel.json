@@ -1,14 +1,14 @@
 {
     "version": 2,
     "builds": [{
-        "src": "Tomato Diagnostics/core/wsgi.py",
+        "src": "TomatoDiagnostics/core/wsgi.py",
         "use": "@ardnt/vercel-python-wsgi",
         "config": {
-            "maxLambdaSize": "25mb"
+            "maxLambdaSize": "50mb"
         }
     }],
     "routes": [{
         "src": "/(.*)",
-        "dest": "Tomato Diagnostics/core/wsgi.py"
+        "dest": "TomatoDiagnostics/core/wsgi.py"
     }]
 }
