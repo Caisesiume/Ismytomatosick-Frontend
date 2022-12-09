@@ -1,20 +1,12 @@
 {
     "version": 2,
     "builds": [{
-            "src": "requirements.txt",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "10mb"
-            }
-        },
-        {
-            "src": "Tomato Diagnostics/core/wsgi.py",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "10mb"
-            }
+        "src": "Tomato Diagnostics/core/wsgi.py",
+        "use": "@ardnt/vercel-python-wsgi",
+        "config": {
+            "maxLambdaSize": "25mb"
         }
-    ],
+    }],
     "routes": [{
         "src": "/(.*)",
         "dest": "Tomato Diagnostics/core/wsgi.py"
