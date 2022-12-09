@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [{
         "src": "TomatoDiagnostics/core/wsgi.py",
-        "use": "@ardnt/vercel-python-wsgi"
+        "use": "@vercel/python"
     }],
     "routes": [{
         "src": "/(.*)",
