@@ -1,11 +1,26 @@
 {
     "version": 2,
-    "builds": [{
+    "builds": [
+        {
         "src": "TomatoDiagnostics/core/wsgi.py",
         "use": "@vercel/python"
-    }],
-    "routes": [{
+    },
+    {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
+        }
+    }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
         "src": "/(.*)",
         "dest": "TomatoDiagnostics/core/wsgi.py"
-    }]
+        }
+    ]
 }
