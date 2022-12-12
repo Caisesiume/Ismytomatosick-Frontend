@@ -96,6 +96,9 @@ def result_yellow_curl_view(request):
 def result_two_spotted_view(request):
     return render(request, "home/result-two-spotted-spider-mites.html")
 
+def result_healthy_view(request):
+    return render(request, "home/result-healthy.html")
+
 
 
 
