@@ -6,6 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
 
 def home_view(request):
     return render(request, "home/home.html")
