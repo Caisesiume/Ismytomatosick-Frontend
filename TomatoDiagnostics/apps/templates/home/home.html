@@ -65,6 +65,7 @@
 {% block javascripts %}
 <script>
     let url = "http://127.0.0.1:8000/v1/detect/"
+    let PREDICTION;
 
     async function uploadImage() {
         // Stop the form from reloading the page
@@ -72,7 +73,7 @@
 
         // If there's no file, do nothing
         if (!file.value.length) return;
-
+        const btn = document.querySelector('#imageUploadForm');
         let image = file.files[0];
 
         console.log(image);
@@ -85,11 +86,56 @@
         }
         formData.append('binary', b64)
         let pic = JSON.stringify(base64json)
+        let predVal;
+        let newPred = await fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong');
+                }
+            })
+            .catch(error => console.error(error))
+        PREDICTION = newPred.disease.toLowerCase();
+        switch (PREDICTION) {
+            case "bacterial_spot":
+                window.location.href = '/result-bacterial-spot'
+                break;
+            case "early_blight":
+                window.location.href = '/result-early-blight'
+                break;
+            case "late_blight":
+                window.location.href = '/result-late-blight'
+                break;
+            case "leaf_mold":
+                window.location.href = '/result-leaf-mold'
+                break;
+            case "septoria_leaf_spot":
+                window.location.href = '/result-septoria-leaf-spot'
+                break;
+            case "spider_mites two-spotted_spider_mite":
+                window.location.href = '/result-spider-mites'
+                break;
+            case "target_spot":
+                window.location.href = '/result-target-spot'
+                break;
+            case "tomato_yellow_leaf_curl_virus":
+                window.location.href = '/result-yellow-leaf-curl-virus'
+                break;
+            case "tomato_mosaic_virus":
+                window.location.href = '/result-tomato-mosaic-virus'
+                break;
+            case "powdery_mildew":
+                window.location.href = '/result-powdery-mildew'
+                break;
+            default:
+                window.location.href = '/result-healthy'
+                break;
+        }
 
-        let newImage = await fetch(url, {
-            method: 'POST',
-            body: formData
-        }).then(response => console.log(response.json())).catch(error => console.error(error))
     }
 
     const convertBase64 = (file) => {

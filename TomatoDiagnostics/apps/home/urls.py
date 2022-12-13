@@ -15,7 +15,6 @@ urlpatterns = [
     path('info/', info_view, name="info"),
     
     #Plant pages
-    path('result-bacterial-spot/', result_bacterial_spot_view, name="result bacterial spot"),
     path('bacterial-spot/', bacterial_spot_view, name="bacterial spot"),
     path('early-blight/', early_blight_view, name="early blight"),
     path('late-blight/', late_blight_view, name="late blight"),
