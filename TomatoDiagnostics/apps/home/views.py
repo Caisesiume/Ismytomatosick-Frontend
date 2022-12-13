@@ -6,6 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
 
 def home_view(request):
     return render(request, "home/home.html")
@@ -30,6 +32,7 @@ def privacy_view(request):
 
 def loggedin_view(request):
     return render(request, "home/loggedin.html")
+
 
 #Plant pages
 
@@ -62,6 +65,42 @@ def yellow_curl_view(request):
 
 def two_spotted_view(request):
     return render(request, "home/two-spotted-spider-mites.html")
+
+#Result pages
+
+def result_bacterial_spot_view(request):
+    return render(request, "home/result-bacterial-spot.html")
+
+def result_early_blight_view(request):
+    return render(request, "home/result-early-blight.html")
+
+def result_late_blight_view(request):
+    return render(request, "home/result-late-blight.html")
+
+def result_leaf_mold_view(request):
+    return render(request, "home/result-leaf-mold.html")
+
+def result_powdery_mildew_view(request):
+    return render(request, "home/result-powdery-mildew.html")
+
+def result_septoria_view(request):
+    return render(request, "home/result-septoria-leaf-spot.html")
+
+def result_target_spot_view(request):
+    return render(request, "home/result-target-spot.html")
+
+def result_mosaic_view(request):
+    return render(request, "home/result-tomato-mosaic-virus.html")
+
+def result_yellow_curl_view(request):
+    return render(request, "home/result-tomato-yellow-curl-virus.html")
+
+def result_two_spotted_view(request):
+    return render(request, "home/result-two-spotted-spider-mites.html")
+
+def result_healthy_view(request):
+    return render(request, "home/result-healthy.html")
+
 
 
 

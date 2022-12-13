@@ -11,3 +11,4 @@
 |   2022-11-29 | Stand up	|   X	|   X	|   X	|   X	|   X   |   X	|
 |   2022-12-01 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   X   |   X	|
 |   2022-12-06 | Stand up	|   X	|   X	|   X	|   X	|   X   |   X	|
+|   2022-12-08 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   X   |   Late	|

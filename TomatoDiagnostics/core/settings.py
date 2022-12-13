@@ -1,7 +1,4 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
 import os, environ
 
@@ -28,8 +25,15 @@ ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 
 # load production server from .env
 ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1', '.vercel.app', '.now.sh', '.ismytomatosick.com', env('SERVER', default='127.0.0.1') ]
-CSRF_TRUSTED_ORIGINS = ['http://localhost:85', 'http://127.0.0.1', 'https://api.ismytomatosick.com', 'https://' + env('SERVER', default='127.0.0.1') ]
-
+CSRF_TRUSTED_ORIGINS = ['*']
+    #'http://localhost:85', 'http://127.0.0.1', 'https://api.ismytomatosick.com', 'https://' + env('SERVER', default='127.0.0.1') ]
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+  'http://127.0.0.1:8000',
+  'http://localhost:7000',
+  'http://127.0.0.1:7000',
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -118,6 +122,11 @@ STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
 
+
+
+# Media files
+MEDIA_ROOT = os.path.join(CORE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 #############################################################
 #############################################################

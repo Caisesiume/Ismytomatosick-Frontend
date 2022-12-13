@@ -1,86 +1,173 @@
-<!-- [CODED BY CHRISTOFER & SIMON] Start  --> 
+<!-- [CODED BY CHRISTOFER & SIMON] Start  -->
 
 
-{% extends 'layouts/base-fullscreen.html' %}
-
-{% block title %} Sign IN {% endblock title %}
+{% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
-{% block stylesheets %}{% endblock stylesheets %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
-{% block content %}
-
-  <div class="container position-sticky z-index-sticky top-0">
+<div class="container position-sticky z-index-sticky top-0">
     <div class="row">
-      <div class="col-12">
+        <div class="col-12">
 
-        {% include "includes/navigation-fullscreen.html" %}
+            {% include "includes/navigation-fullscreen.html" %}
 
-      </div>
-    </div>
-  </div>
-
-  <main class="main-content  mt-0">
-    <section>
-      <div class="page-header min-vh-75">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
-              <div class="card card-plain mt-8">
-                <div class="card-header pb-0 text-left bg-transparent">
-                    <h3 class="font-weight-bolder text-info text-gradient">
-                    Tomato Diagnostics
-                    </h3>
-
-                    <h5 class="mb-5"> 
-                    By uploading a picture of a tomatoplants leaf Tomato Diagnostics can determain whether it is healthy or if it is not.
-                    </h5>
-                </div>
-                <div class="card-body">
-
-                  <form role="form text-left" method="post" action="">
-                    
-                    <label class="form-label" for="customFile">Upload a picture on the plants leaf</label>
-                    <input class="form-control" type="file" id="formFile" onchange="preview()">
-                    <button type="submit" onclick="clearImage()" class="btn bg-gradient-info w-100 mt-4 mb-0">Upload</button>
-
-                  </form>
-
-                </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-                <img id="frame" src="{{ ASSETS_ROOT }}/img/tomato.png" class="img-fluid oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" />
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
+
+<main class="main-content  mt-0">
+    <section>
+        <div class="page-header min-vh-75">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+                        <div class="card card-plain mt-8">
+                            <div class="card-header pb-0 text-left bg-transparent">
+                                <h3 class="font-weight-bolder text-info text-gradient">
+                                    Tomato Diagnostics
+                                </h3>
+
+                                <h5 class="mb-5">
+                                    By uploading a picture of a tomatoplants leaf Tomato Diagnostics can determain whether it is healthy or if it is not.
+                                </h5>
+                            </div>
+                            <div class="card-body">
+
+                                <form role="form text-left" method="" enctype="multipart/form-data" action="">
+                                    {% csrf_token %}
+                                    <label class="form-label" for="customFile">Upload a picture on the plants leaf (must be .jpg)</label>
+                                    <input class="form-control" type="file" id="file" accept="image/jpg" onchange="preview()">
+                                    <button id="imageUploadForm" type="submit" onclick="uploadImage()" class="btn bg-gradient-info w-100 mt-4 mb-0">Upload</button>
+
+                                </form>
+
+                            </div>
+                            <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                            <img id="frame" src="{{ ASSETS_ROOT }}/img/tomato.png" class="img-fluid oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
+</main>
 
-  {% include "includes/footer-fullscreen.html" %}
+{% include "includes/footer-fullscreen.html" %} {% endblock content %}
 
-{% endblock content %}
-
-<!-- Specific JS goes HERE --> 
+<!-- Specific JS goes HERE -->
 
 {% block javascripts %}
 <script>
+    let url = "http://127.0.0.1:8000/v1/detect/"
+    let PREDICTION;
+
+    async function uploadImage() {
+        // Stop the form from reloading the page
+        event.preventDefault();
+
+        // If there's no file, do nothing
+        if (!file.value.length) return;
+        const btn = document.querySelector('#imageUploadForm');
+        let image = file.files[0];
+
+        console.log(image);
+        let formData = new FormData()
+
+        formData.append('file', image)
+        let b64 = await convertBase64(formData.get('file'))
+        let base64json = {
+            "image": b64,
+        }
+        formData.append('binary', b64)
+        let pic = JSON.stringify(base64json)
+        let predVal;
+        let newPred = await fetch(url, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Something went wrong');
+                }
+            })
+            .catch(error => console.error(error))
+        PREDICTION = newPred.disease.toLowerCase();
+        switch (PREDICTION) {
+            case "bacterial_spot":
+                window.location.href = '/result-bacterial-spot'
+                break;
+            case "early_blight":
+                window.location.href = '/result-early-blight'
+                break;
+            case "late_blight":
+                window.location.href = '/result-late-blight'
+                break;
+            case "leaf_mold":
+                window.location.href = '/result-leaf-mold'
+                break;
+            case "septoria_leaf_spot":
+                window.location.href = '/result-septoria-leaf-spot'
+                break;
+            case "spider_mites two-spotted_spider_mite":
+                window.location.href = '/result-spider-mites'
+                break;
+            case "target_spot":
+                window.location.href = '/result-target-spot'
+                break;
+            case "tomato_yellow_leaf_curl_virus":
+                window.location.href = '/result-yellow-leaf-curl-virus'
+                break;
+            case "tomato_mosaic_virus":
+                window.location.href = '/result-tomato-mosaic-virus'
+                break;
+            case "powdery_mildew":
+                window.location.href = '/result-powdery-mildew'
+                break;
+            default:
+                window.location.href = '/result-healthy'
+                break;
+        }
+
+    }
+
+    const convertBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    };
+
     function preview() {
         frame.src = URL.createObjectURL(event.target.files[0]);
     }
+
     function clearImage() {
         document.getElementById('formFile').value = null;
         frame.src = "";
     }
 
-    
+    //let newImage = await fetch(url, {
+    //    method: 'POST',
+    //    body: formData
+    //})
 </script>
 {% endblock javascripts %}
 
 
-<!-- [CODED BY CHRISTOFER & SIMON] End  --> 
+<!-- [CODED BY CHRISTOFER & SIMON] End  -->

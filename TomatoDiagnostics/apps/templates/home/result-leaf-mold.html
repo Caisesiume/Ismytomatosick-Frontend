@@ -1,0 +1,66 @@
+<!-- [CODED BY CHRISTOFER] Start  -->
+
+
+{% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
+
+<style>
+    #more {
+        display: none;
+    }
+</style>
+
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+
+<div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+        <div class="col-12">
+
+            {% include "includes/navigation-fullscreen.html" %}
+
+        </div>
+    </div>
+</div>
+
+
+
+<main class="main-content mt-8 text-center">
+    <section>
+
+
+        <div class="row">
+            <h1 class="font-weight-bolder text-info text-gradient mb-5 mt-5"> Your plant is suffering from Leaf Mold <br>
+            </h1>
+            <h3 class="font-weight-bolder text-info text-gradient mb-5"> But dont give up hope, by clicking the button you find all you need about wo Leaf Mold!</h3>
+        </div>
+
+        <button type="button" id="btn" value="Show Div" onclick="showDiv()" class="btn bg-gradient-info mb-5">Read More</button>
+
+        <div id="plantDiv" style="display:none;" class="answer_list">
+
+            {% include "includes/leaf-mold-info.html" %}
+
+        </div>
+
+    </section>
+</main>
+
+{% include "includes/footer-fullscreen.html" %} {% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+<script>
+    const btn = document.getElementById('btn');
+
+    btn.addEventListener('click', () => {
+        // 👇️ hide button
+        btn.style.display = 'none';
+
+        // 👇️ show div
+        const plantDiv = document.getElementById('plantDiv');
+        plantDiv.style.display = 'block';
+    });
+</script>
+{% endblock javascripts %}
+
+<!-- [CODED BY CHRISTOFER] End  -->
