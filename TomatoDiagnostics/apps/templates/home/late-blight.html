@@ -1,39 +1,32 @@
-<!-- [CODED BY CHRISTOFER & SIMON] Start  --> 
+<!-- [CODED BY CHRISTOFER & SIMON] Start  -->
 
 
 
-{% extends 'layouts/base-fullscreen.html' %}
-
-{% block title %} Sign IN {% endblock title %}
+{% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
 
-{% block stylesheets %}{% endblock stylesheets %}
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
-{% block content %}
-
-  <div class="container position-sticky z-index-sticky top-0">
+<div class="container position-sticky z-index-sticky top-0">
     <div class="row">
-      <div class="col-12">
+        <div class="col-12">
 
-        {% include "includes/navigation-fullscreen.html" %}
+            {% include "includes/navigation-fullscreen.html" %}
 
-      </div>
+        </div>
     </div>
-  </div>
+</div>
 
-  <main class="main-content  mt-8">
+<main class="main-content  mt-8">
     <section>
-      {% include "includes/late-blight-info.html" %}
+        {% include "includes/late-blight-info.html" %}
     </section>
-  </main>
+</main>
 
- {% include "includes/footer-fullscreen.html" %}
+{% include "includes/footer-fullscreen.html" %} {% endblock content %}
 
-{% endblock content %}
-
-<!-- Specific JS goes HERE --> 
-{% block javascripts %}
-{% endblock javascripts %}
+<!-- Specific JS goes HERE -->
+{% block javascripts %} {% endblock javascripts %}
 
 <!-- [CODED BY CHRISTOFER & SIMON] Start  -->

@@ -4,6 +4,28 @@
 {% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
 
 <!-- Specific CSS goes HERE -->
+<style>
+    .spinner {
+        display: inline-block;
+        opacity: 0!important;
+        max-width: 0;
+        -webkit-transition: opacity 0.25s, max-width 0.45s;
+        -moz-transition: opacity 0.25s, max-width 0.45s;
+        -o-transition: opacity 0.25s, max-width 0.45s;
+        transition: opacity 0.25s, max-width 0.45s;
+        /* Duration fixed since we animate additional hidden width */
+    }
+    
+    .has-spinner.active {
+        cursor: progress;
+    }
+    
+    .has-spinner.active .spinner {
+        opacity: 1;
+        max-width: 50px;
+        /* More than it will ever come, notice that this affects on animation duration */
+    }
+</style>
 {% block stylesheets %}{% endblock stylesheets %} {% block content %}
 
 <div class="container position-sticky z-index-sticky top-0">
@@ -24,21 +46,22 @@
                     <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
                         <div class="card card-plain mt-8">
                             <div class="card-header pb-0 text-left bg-transparent">
-                                <h3 class="font-weight-bolder text-info text-gradient">
-                                    Tomato Diagnostics
+                                <h3 class="font-weight-bolder text-info text-gradient mb-1">
+                                    Is My Tomato Sick?
                                 </h3>
 
                                 <h5 class="mb-5">
-                                    By uploading a picture of a tomatoplants leaf Tomato Diagnostics can determain whether it is healthy or if it is not.
+                                    Upload a picture of your tomatoplant leaf and we can help you determain whether it is healthy or not.
                                 </h5>
                             </div>
                             <div class="card-body">
 
                                 <form role="form text-left" method="" enctype="multipart/form-data" action="">
                                     {% csrf_token %}
-                                    <label class="form-label" for="customFile">Upload a picture on the plants leaf (must be .jpg)</label>
-                                    <input class="form-control" type="file" id="file" accept="image/jpg" onchange="preview()">
-                                    <button id="imageUploadForm" type="submit" onclick="uploadImage()" class="btn bg-gradient-info w-100 mt-4 mb-0">Upload</button>
+                                    <label class="form-label" for="customFile">Upload a photo of the leaf (must be .jpg format)</label>
+                                    <input class="form-control" type="file" id="file" accept=".jpg" onchange="preview()">
+                                    <button id="imageUploadForm" type="submit" onclick="uploadImage()" class="btn bg-gradient-info w-100 mt-4 mb-0">
+                                        <span id="spinThis" class=""></span><span id="btnText" style="opacity: 1">Upload</span></button>
 
                                 </form>
 
@@ -57,15 +80,44 @@
         </div>
     </section>
 </main>
-
 {% include "includes/footer-fullscreen.html" %} {% endblock content %}
 
 <!-- Specific JS goes HERE -->
 
 {% block javascripts %}
 <script>
+    // VARIABLES
     let url = "http://127.0.0.1:8000/v1/detect/"
     let PREDICTION;
+
+    // DOCUMENT INTERACTION
+
+
+
+    // FUNCTIONS FOR IMAGE UPLOADING
+    const convertBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    };
+
+    function preview() {
+        frame.src = URL.createObjectURL(event.target.files[0]);
+    }
+
+    function clearImage() {
+        document.getElementById('formFile').value = null;
+        frame.src = "";
+    }
 
     async function uploadImage() {
         // Stop the form from reloading the page
@@ -73,7 +125,10 @@
 
         // If there's no file, do nothing
         if (!file.value.length) return;
-        const btn = document.querySelector('#imageUploadForm');
+        const loading = document.querySelector('#spinThis');
+        loading.classList.add('spinner-border', 'spinner-border-sm', 'text-dark', 'mr-2');
+        const btnText = document.querySelector('#btnText');
+        btnText.textContent = "Diagnosing...";
         let image = file.files[0];
 
         console.log(image);
@@ -99,6 +154,10 @@
                 }
             })
             .catch(error => console.error(error))
+
+
+        // REDIRECT TO THE CORRECT PAGE 
+        // BASED ON THE PREDICTION
         PREDICTION = newPred.disease.toLowerCase();
         switch (PREDICTION) {
             case "bacterial_spot":
@@ -114,19 +173,19 @@
                 window.location.href = '/result-leaf-mold'
                 break;
             case "septoria_leaf_spot":
-                window.location.href = '/result-septoria-leaf-spot'
+                window.location.href = '/result-septoria'
                 break;
             case "spider_mites two-spotted_spider_mite":
-                window.location.href = '/result-spider-mites'
+                window.location.href = '/result-two-spotted'
                 break;
             case "target_spot":
                 window.location.href = '/result-target-spot'
                 break;
             case "tomato_yellow_leaf_curl_virus":
-                window.location.href = '/result-yellow-leaf-curl-virus'
+                window.location.href = '/result-yellow-curl'
                 break;
             case "tomato_mosaic_virus":
-                window.location.href = '/result-tomato-mosaic-virus'
+                window.location.href = '/result-tomato-mosaic'
                 break;
             case "powdery_mildew":
                 window.location.href = '/result-powdery-mildew'
@@ -137,35 +196,6 @@
         }
 
     }
-
-    const convertBase64 = (file) => {
-        return new Promise((resolve, reject) => {
-            const fileReader = new FileReader();
-            fileReader.readAsDataURL(file);
-
-            fileReader.onload = () => {
-                resolve(fileReader.result);
-            };
-
-            fileReader.onerror = (error) => {
-                reject(error);
-            };
-        });
-    };
-
-    function preview() {
-        frame.src = URL.createObjectURL(event.target.files[0]);
-    }
-
-    function clearImage() {
-        document.getElementById('formFile').value = null;
-        frame.src = "";
-    }
-
-    //let newImage = await fetch(url, {
-    //    method: 'POST',
-    //    body: formData
-    //})
 </script>
 {% endblock javascripts %}
 
