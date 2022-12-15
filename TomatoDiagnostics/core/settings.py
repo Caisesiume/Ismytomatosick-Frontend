@@ -27,7 +27,7 @@ DEBUG = True
 ASSETS_ROOT = os.path.join(BASE_DIR, '/static/')
 # load production server from .env
 ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1', '.vercel.app', '.now.sh', '.ismytomatosick.com', env('SERVER', default='127.0.0.1') ]
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
     #'http://localhost:85', 'http://127.0.0.1', 'https://api.ismytomatosick.com', 'https://' + env('SERVER', default='127.0.0.1') ]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
