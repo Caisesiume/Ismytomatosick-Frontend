@@ -15,4 +15,6 @@ urlpatterns = [
 
     # Leave `Home.Urls` as last the last line
     path("", include("apps.home.urls"))
- ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+ ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

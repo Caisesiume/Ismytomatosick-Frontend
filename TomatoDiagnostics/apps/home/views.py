@@ -8,34 +8,34 @@ from django.urls import reverse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
-
+@csrf_exempt
 def home_view(request):
     return render(request, "home/home.html")
-
+@csrf_exempt
 def info_view(request):
     return render(request, "home/info.html")
-
+@csrf_exempt
 def info_page_view(request):
     return render(request, "home/info-page.html")
-
+@csrf_exempt
 def info_plant_view(request):
     return render(request, "home/info-plant.html")
-
+@csrf_exempt
 def contact_view(request):
     return render(request, "home/contact.html")
-
+@csrf_exempt
 def terms_view(request):
     return render(request, "home/terms.html")
-
+@csrf_exempt
 def privacy_view(request):
     return render(request, "home/privacy.html")
-
+@csrf_exempt
 def loggedin_view(request):
     return render(request, "home/loggedin.html")
 
 
 #Plant pages
-
+@csrf_exempt
 def bacterial_spot_view(request):
     return render(request, "home/bacterial-spot.html")
 
