@@ -12,3 +12,6 @@
 |   2022-12-01 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   X   |   X	|
 |   2022-12-06 | Stand up	|   X	|   X	|   X	|   X	|   X   |   X	|
 |   2022-12-08 | Retrospect + Planning	|   X	|   X	|   X	|   X	|   X   |   Late	|
+|   2022-12-13 | Stand up	|   Sick	|   X	|   X	|   X	|   X   |   X	|
+|   2022-12-14 | Project Fair	|   Sick	|   X	|   X	|   Sick	|   X   |   X	|
+|   2022-12-15 | Retrospect + Planning	|   Sick	|   X	|   X	|   Sick	|   X   |   X	|
