@@ -1,6 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 import os, environ
+import mimetypes
+
 
 env = environ.Env(
     # set casting, default value
@@ -18,11 +20,11 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY', default='ALHJLKJAH@$AKSDFaskjfhAKFF(!FFLAF')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = True 
 
 # Assets Management
-ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
-
+#ASSETS_ROOT = os.path.join('ASSETS_ROOT', '/static/assets') 
+ASSETS_ROOT = os.path.join(BASE_DIR, '/static/')
 # load production server from .env
 ALLOWED_HOSTS        = ['localhost', 'localhost:85', '127.0.0.1', '.vercel.app', '.now.sh', '.ismytomatosick.com', env('SERVER', default='127.0.0.1') ]
 CSRF_TRUSTED_ORIGINS = ['http://*', 'https://*']
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -114,18 +117,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
-STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(CORE_DIR, 'apps/static'),
-)
+STATICFILES_DIRS = [BASE_DIR + '/static']
 
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+mimetypes.add_type("text/javascript", ".js", True)
+mimetypes.add_type("text/css", ".css", True)
 
 # Media files
-MEDIA_ROOT = os.path.join(CORE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 #############################################################

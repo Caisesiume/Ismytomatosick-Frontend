@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+        {
+        "src": "core/wsgi.py",
+        "use": "@vercel/python"
+        }, 
+        {
+            "src": "build_files.sh",
+            "use": "@vercel/static-build", 
+            "config": {
+                "distDir": "./staticfiles"
+            }
+        
+        }
+    ],
+    "routes": [
+        { 
+            "src": "./apps/static/assets/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "core/wsgi.py"
+        }
+    ]
+}
