@@ -101,6 +101,8 @@ def result_two_spotted_view(request):
 def result_healthy_view(request):
     return render(request, "home/result-healthy.html")
 
+def result_unsure_view(request):
+    return render(request, "home/result-unsure.html")
 
 
 
