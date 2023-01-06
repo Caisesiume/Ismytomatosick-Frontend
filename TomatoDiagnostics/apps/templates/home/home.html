@@ -159,40 +159,45 @@
         // REDIRECT TO THE CORRECT PAGE 
         // BASED ON THE PREDICTION
         PREDICTION = newPred.disease.toLowerCase();
-        switch (PREDICTION) {
-            case "bacterial_spot":
-                window.location.href = '/result-bacterial-spot'
-                break;
-            case "early_blight":
-                window.location.href = '/result-early-blight'
-                break;
-            case "late_blight":
-                window.location.href = '/result-late-blight'
-                break;
-            case "leaf_mold":
-                window.location.href = '/result-leaf-mold'
-                break;
-            case "septoria_leaf_spot":
-                window.location.href = '/result-septoria'
-                break;
-            case "spider_mites two-spotted_spider_mite":
-                window.location.href = '/result-two-spotted'
-                break;
-            case "target_spot":
-                window.location.href = '/result-target-spot'
-                break;
-            case "tomato_yellow_leaf_curl_virus":
-                window.location.href = '/result-yellow-curl'
-                break;
-            case "tomato_mosaic_virus":
-                window.location.href = '/result-tomato-mosaic'
-                break;
-            case "powdery_mildew":
-                window.location.href = '/result-powdery-mildew'
-                break;
-            default:
-                window.location.href = '/result-healthy'
-                break;
+        console.log(newPred);
+        if (newPred.predValue < 0.5) {
+            window.location.href = '/result-unsure';
+        } else {
+            switch (PREDICTION) {
+                case "bacterial_spot":
+                    window.location.href = '/result-bacterial-spot'
+                    break;
+                case "early_blight":
+                    window.location.href = '/result-early-blight'
+                    break;
+                case "late_blight":
+                    window.location.href = '/result-late-blight'
+                    break;
+                case "leaf_mold":
+                    window.location.href = '/result-leaf-mold'
+                    break;
+                case "septoria_leaf_spot":
+                    window.location.href = '/result-septoria'
+                    break;
+                case "spider_mites two-spotted_spider_mite":
+                    window.location.href = '/result-two-spotted'
+                    break;
+                case "target_spot":
+                    window.location.href = '/result-target-spot'
+                    break;
+                case "tomato_yellow_leaf_curl_virus":
+                    window.location.href = '/result-yellow-curl'
+                    break;
+                case "tomato_mosaic_virus":
+                    window.location.href = '/result-tomato-mosaic'
+                    break;
+                case "powdery_mildew":
+                    window.location.href = '/result-powdery-mildew'
+                    break;
+                default:
+                    window.location.href = '/result-healthy'
+                    break;
+            }
         }
 
     }

@@ -2,7 +2,7 @@
 # [CODED BY CHRISTOFER & SIMON] Start
 
 from django.urls import path, re_path
-from .views import contact_view, home_view, info_view, loggedin_view, privacy_view, result_bacterial_spot_view, result_early_blight_view, result_healthy_view, result_late_blight_view, result_leaf_mold_view, result_mosaic_view, result_powdery_mildew_view, result_septoria_view, result_target_spot_view, result_two_spotted_view, result_yellow_curl_view, terms_view, info_page_view, info_plant_view, bacterial_spot_view, early_blight_view, late_blight_view, leaf_mold_view, powdery_mildew_view, septoria_view, target_spot_view, mosaic_view, yellow_curl_view, two_spotted_view
+from .views import *
 
 urlpatterns = [
     path('', home_view, name="home"),
@@ -37,8 +37,8 @@ urlpatterns = [
     path('result-tomato-mosaic/', result_mosaic_view, name="result tomato mosaic virus"),
     path('result-yellow-curl/', result_yellow_curl_view, name="result tomato yellow leaf curl virus"),
     path('result-two-spotted/', result_two_spotted_view, name="result two-spotted spider mites"),
-    path('result-healthy/', result_healthy_view, name="result healthy")
-    
+    path('result-healthy/', result_healthy_view, name="result healthy"),
+    path('result-unsure/', result_unsure_view, name="result unsure")
 ]
 
 # [CODED BY CHRISTOFER & SIMON] End

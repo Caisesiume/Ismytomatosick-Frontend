@@ -1,0 +1,78 @@
+<!-- [CODED BY SIMON] Start  -->
+
+
+{% extends 'layouts/base-fullscreen.html' %} {% block title %} Sign IN {% endblock title %}
+
+<style>
+    #more {
+        display: none;
+    }
+</style>
+
+{% block stylesheets %}{% endblock stylesheets %} {% block content %}
+
+
+<div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+        <div class="col-12">
+
+            {% include "includes/navigation-fullscreen.html" %}
+
+        </div>
+    </div>
+</div>
+
+
+
+<main class="main-content mt-8 text-center">
+    <section>
+
+
+        <div class="row">
+            <h3 class="font-weight-bolder text-info text-gradient mb-5 mt-5">
+                We could not provide an accurate prediction of your plant this time <br>
+            </h3>
+            <h4 class="font-weight-bolder text-info text-gradient mb-5 mt-3">
+                Tips to make sure your picture is in perfect conditions for us to help you
+            </h4>
+        </div>
+
+
+        <div style="text-align: center; justify-content: center; display: flex;">
+
+            <ul style="text-align: left;">
+                <li class="mb-2">Make sure your plant leaf is in focus</li>
+                <li class="mb-2">Make sure your plant leaf is not too close to the camera</li>
+                <li class="mb-2">Make sure your plant leaf is not too far from the camera</li>
+                <li class="mb-2">Make sure your plant leaf is not too close to the light</li>
+                <li class="mb-2">Make sure your plant leaf is not too far from the light</li>
+                <li class="mb-2">Make sure your plant leaf is not too close to the background</li>
+                <li class="mb-2">Make sure your plant leaf is not too far from the background</li>
+                <li class="mb-2">Make sure your plant leaf is the main subject of the picture</li>
+                <li class="mb-2">Make sure your plant leaf is not too close to the edges of the picture</li>
+                <li class="mb-2">Make sure your plant leaf is not too far from the edges of the picture</li>
+            </ul>
+        </div>
+        <div class="mt-3">
+            <h3 class="font-weight-bolder text-info text-gradient">
+                Here are some examples of pictures we can analyse well
+            </h3>
+            <img src="{{ ASSETS_ROOT }}/img/bact1.JPG" alt="Leaf 1" style="width: 20vw; height: auto;">
+            <img src="{{ ASSETS_ROOT }}/img/mildew5.jpg" alt="Leaf 3" style="width: 20vw; height: auto;">
+            <img src="{{ ASSETS_ROOT }}/img/early4.JPG" alt="Leaf 2" style="width: 20vw; height: auto;">
+        </div>
+        <div class="mt-3" style="text-align: center;">
+            <a href="/" class="btn bg-gradient-info btn-lg btn-block">Try again</a>
+        </div>
+    </section>
+</main>
+
+{% include "includes/footer-fullscreen.html" %} {% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+<script>
+</script>
+{% endblock javascripts %}
+
+<!-- [CODED BY SIMON] End  -->
