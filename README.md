@@ -7,7 +7,7 @@ Tomato Diagnostics is an application that takes a user's own image of their own 
 Tomato Diagnostics is directly aimed to fill the need of the ordinary amature/home farmer that lacks the experience to, on their own, detect different illnesses among their tomato plants. All the user has to do to figure out what state their plant is in is to upload a picture of their plant's leaf to Tomato Diagnostics and the application will determine in what state the plant is in.
 
 ### Installation
-Tomato Diagnostics is an online web application that can be accessed through the domain http://ismytomatosic.com/.
+Tomato Diagnostics is an online web application that can be accessed through the domain http://ismytomatosick.com/.
 Dependencies -
 https://www.anaconda.com/products/distribution
 https://www.python.org/downloads/
